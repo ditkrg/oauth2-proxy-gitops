@@ -14,6 +14,7 @@ spec:
             - --client-id=oauth2-proxy
             - --profile-url=https://auth.dev.krd/connect/userinfo
             - --oidc-issuer-url=https://auth.dev.krd
+            - --custom-sign-in-logo=https://gov.krd/media/1099/govkrdlogobig.svg
             - --email-domain=*
             - --http-address=:4180
             - --code-challenge-method=S256
