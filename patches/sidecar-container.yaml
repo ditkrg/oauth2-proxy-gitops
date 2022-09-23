@@ -18,7 +18,7 @@ spec:
             - --email-domain=*
             - --http-address=:4180
             - --code-challenge-method=S256
-            - --cookie-secure=false
+            - --cookie-secure=true
             - --session-cookie-minimal=true
 
           envFrom:
