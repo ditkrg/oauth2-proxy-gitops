@@ -25,6 +25,7 @@ helm:
       - --code-challenge-method=S256
       - --cookie-secure=true
       - --session-cookie-minimal=true
+      - --whitelist-domain=*.dev.krd
 
     configuration:
       existingSecret: oauth2-proxy
