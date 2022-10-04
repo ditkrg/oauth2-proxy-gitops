@@ -9,4 +9,10 @@ helm:
   values:
     ingress:
       enabled: true
+
+      tls: true
+      certManager: true
       hostname: protect.dev.krd
+
+      annotations:
+        cert-manager.io/cluster-issuer: letsencrypt-cluster-issuer
