@@ -24,6 +24,7 @@ helm:
       - --custom-sign-in-logo=https://gov.krd/media/1099/govkrdlogobig.svg
       - --code-challenge-method=S256
       - --cookie-secure=true
+      - --cookie-domain=.dev.krd
       - --session-cookie-minimal=true
       - --whitelist-domain=*.dev.krd
 
