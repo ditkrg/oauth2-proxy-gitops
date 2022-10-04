@@ -28,3 +28,12 @@ helm:
 
     configuration:
       existingSecret: oauth2-proxy
+
+targetCustomizations:
+  - name: development
+    clusterSelector:
+      matchLabels:
+        env: dev
+
+    kustomize:
+      dir: overlays/development
