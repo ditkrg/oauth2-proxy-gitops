@@ -7,5 +7,35 @@ helm:
   version: 3.3.1
 
   values:
-    redis:
-      enabled: false
+    ingress:
+      enabled: true
+
+      tls: true
+      certManager: true
+      hostname: protect.dev.krd
+
+      annotations:
+        cert-manager.io/cluster-issuer: letsencrypt-cluster-issuer
+
+    extraArgs:
+      - --provider=oidc
+      - --profile-url=https://auth.dev.krd/connect/userinfo
+      - --oidc-issuer-url=https://auth.dev.krd
+      - --custom-sign-in-logo=https://gov.krd/media/1099/govkrdlogobig.svg
+      - --code-challenge-method=S256
+      - --cookie-secure=true
+      - --cookie-domain=.dev.krd
+      - --session-cookie-minimal=true
+      - --whitelist-domain=*.dev.krd
+
+    configuration:
+      existingSecret: oauth2-proxy
+
+targetCustomizations:
+  - name: development
+    clusterSelector:
+      matchLabels:
+        env: dev
+
+    kustomize:
+      dir: overlays/development

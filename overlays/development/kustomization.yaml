@@ -1,0 +1,3 @@
+---
+resources:
+  - oauth2-proxy-secrets.yaml
