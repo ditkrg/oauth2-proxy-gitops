@@ -1,0 +1,7 @@
+---
+namespace: oauth2-proxy
+helm:
+  repo: https://charts.bitnami.com
+  chart: oauth2-proxy
+  releaseName: oauth2-proxy
+  version: 3.3.1
