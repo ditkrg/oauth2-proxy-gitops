@@ -7,5 +7,6 @@ helm:
   version: 3.3.1
 
   values:
-    redis:
-      enabled: false
+    ingress:
+      enabled: true
+      hostname: protect.dev.krd
