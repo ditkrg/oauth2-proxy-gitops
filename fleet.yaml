@@ -7,16 +7,6 @@ helm:
   version: 3.3.1
 
   values:
-    extraArgs:
-      - --provider=oidc
-      - --client-id=oauth2-proxy
-      - --profile-url=https://auth.dev.krd/connect/userinfo
-      - --oidc-issuer-url=https://auth.dev.krd
-      - --custom-sign-in-logo=https://gov.krd/media/1099/govkrdlogobig.svg
-      - --code-challenge-method=S256
-      - --cookie-secure=true
-      - --session-cookie-minimal=true
-
     ingress:
       enabled: true
 
@@ -26,3 +16,15 @@ helm:
 
       annotations:
         cert-manager.io/cluster-issuer: letsencrypt-cluster-issuer
+
+    extraArgs:
+      - --provider=oidc
+      - --profile-url=https://auth.dev.krd/connect/userinfo
+      - --oidc-issuer-url=https://auth.dev.krd
+      - --custom-sign-in-logo=https://gov.krd/media/1099/govkrdlogobig.svg
+      - --code-challenge-method=S256
+      - --cookie-secure=true
+      - --session-cookie-minimal=true
+
+    configuration:
+      existingSecret: oauth2-proxy
