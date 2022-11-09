@@ -1,7 +1,7 @@
 ---
 namespace: oauth2-proxy
 helm:
-  repo: https://charts.bitnami.com/bitnami/oauth2-proxy-3.3.1.tgz
+  chart: https://charts.bitnami.com/bitnami/oauth2-proxy-3.3.1.tgz
   releaseName: oauth2-proxy
 
   values:
