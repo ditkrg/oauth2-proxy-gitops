@@ -24,7 +24,7 @@ helm:
       - --cookie-secure=true
       - --cookie-domain=.dev.krd
       - --session-cookie-minimal=true
-      - --whitelist-domain=*.dev.krd,*.gov.krd
+      - --whitelist-domain=*.dev.krd,visit.gov.krd
 
     configuration:
       existingSecret: oauth2-proxy
